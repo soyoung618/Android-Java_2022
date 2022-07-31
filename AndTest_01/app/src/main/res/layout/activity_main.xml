@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/daum"/>
+
+
+    <TableLayout android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView android:layout_margin="5dp"/>
+            <EditText android:layout_width="0dp" android:layout_weight="1"
+                android:hint="아이디"
+                android:layout_margin="5dp" android:id="@+id/edtName"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:layout_margin="5dp"/>
+            <EditText android:layout_width="0dp" android:layout_weight="1"
+                android:hint="비밀번호"
+                android:layout_margin="5dp" android:id="@+id/edtpass"/>
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/linear">
+            <Button
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:text="로그인"
+                android:backgroundTint="#2196F3"
+                android:id="@+id/btnCal"/>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtResert"
+            android:text="입력결과: "/>
+    </TableLayout>
+
+
+
+
+</LinearLayout>

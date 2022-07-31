@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3">
+        <ImageView
+            android:src="@drawable/q"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_rowSpan="4"
+            android:id="@+id/img"
+            android:layout_gravity="fill"
+            />
+        <TextView android:text="이름 : "
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"/>
+        <EditText android:hint="        이름을 적으세요        "
+            android:id="@+id/edtName"/>
+        <TextView android:text="비밀번호 : "
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"/>
+        <EditText android:hint="     비밀번호를 적으세요     "
+            android:id="@+id/edtNum"/>
+    </GridLayout>
+    <GridLayout android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="초기화"
+            android:layout_marginRight="10dp"
+            android:id="@+id/btn1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            android:id="@+id/btn2"/>
+</GridLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" android:layout_margin="5dp"
+    tools:context=".MainActivity">
+
+    <TextView android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="주문실습[이름 작성]"
+        android:textSize="25dp"
+        android:gravity="left"
+        android:background="#D1C2ED"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메뉴의 주무 개수를 넣어 주세요."
+        android:textSize="25dp"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView android:text="피자(25000원)" android:layout_margin="5dp" android:textSize="20dp"/>
+            <EditText android:layout_width="0dp" android:layout_weight="1"
+                android:layout_marginLeft="80dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="스파게티(15000원)" android:layout_margin="5dp" android:textSize="20dp"/>
+            <EditText android:layout_width="0dp" android:layout_weight="1"
+                android:layout_marginLeft="80dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="샐러드(10000원)" android:layout_margin="5dp" android:textSize="20dp"/>
+            <EditText android:layout_width="0dp" android:layout_weight="1"
+                android:layout_marginLeft="80dp"/>
+        </TableRow>
+        <CheckBox android:text="멤버쉽 카드 있음(20% 할인)" android:textSize="17dp" android:padding="20dp" android:layout_margin="20dp"/>
+        <Button android:text="금액 초기화하기" android:layout_margin="20dp"/>
+        <Button android:text="초기화하기" android:layout_margin="20dp"/>
+        <TextView android:text="주문개수 :0"/>
+        <TextView android:text="주문금액 :0"/>
+    </TableLayout>
+</LinearLayout>

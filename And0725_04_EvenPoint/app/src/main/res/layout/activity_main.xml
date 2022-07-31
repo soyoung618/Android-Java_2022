@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="숫자만 입력"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="20dp"
+        android:id="@+id/edt_num"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="현재 포인트 입력"
+        android:layout_marginTop="20dp"
+        android:inputType="numberDecimal"
+        android:id="@+id/edt_point"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="짝수의 합 구하기"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_sum"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="가용 포인터 계산"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_point"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="결과 값 출력"
+        android:layout_marginTop="10dp"
+        android:id="@+id/result"/>
+</LinearLayout>
