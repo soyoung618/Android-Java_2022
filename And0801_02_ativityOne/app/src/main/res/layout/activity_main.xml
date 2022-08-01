@@ -23,6 +23,11 @@
             android:text="Third 액티비티"
             android:id="@+id/rbThird"/>
     </RadioGroup>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtContent"
+        android:hint="넘겨줄 내용 입력하기"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
