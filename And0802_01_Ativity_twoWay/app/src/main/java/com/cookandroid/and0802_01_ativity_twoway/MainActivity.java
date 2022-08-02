@@ -8,9 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    RadioGroup rg;
+
     EditText edtNum1,edtNum2;
     Button btn;
     @Override
@@ -21,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         edtNum1 =findViewById(R.id.edtNum1);
         edtNum2 =findViewById(R.id.edtNum2);
         btn =findViewById(R.id.btn);
+        rg =findViewById(R.id.rg);
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +34,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent in = new Intent(getApplicationContext(),SecondActivity.class);
                 in.putExtra("Num1",Integer.parseInt(edtNum1.getText().toString())); //객체로 데이터 전송
                 in.putExtra("Num2",Integer.parseInt(edtNum2.getText().toString()));
+                switch (rg.getCheckedRadioButtonId()){
+                    case R.id.rb1 :
+                        in.putExtra("op","+");break;
+                    case R.id.rb2 :
+                        in.putExtra("op","-");break;
+                    case R.id.rb3 :
+                        in.putExtra("op","*");break;
+                    case R.id.rb4 :
+                        in.putExtra("op","/");break;
+
+                }
                 startActivityForResult(in,0); //requestCod는 세컨액티버티 번호
                 //세컨액티비티에 리턴 값이 있을때 사용(세컨에서  되돌려 받는 경우)
 

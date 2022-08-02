@@ -19,10 +19,36 @@
         android:inputType="numberDecimal"
         android:id="@+id/edtNum2"
         android:hint="정수 입력"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/rg">
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="더하기"
+            android:id="@+id/rb1"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="빼기"
+            android:id="@+id/rb2"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="곱하기"
+            android:id="@+id/rb3"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="나누기"
+            android:id="@+id/rb4"/>
+    </RadioGroup>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="더하기"
+        android:text="계산하기"
         android:id="@+id/btn"/>
 
 </LinearLayout>
