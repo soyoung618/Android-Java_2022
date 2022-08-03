@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class MyDBHelper extends SQLiteOpenHelper {
     public MyDBHelper(@Nullable Context context) {
-        super(context,"groupDB",null,1);
+        super(context,"groupDB2.db",null,1);
         //데이터 베이스 이름 : groupDB
     }
 
