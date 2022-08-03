@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/toast_layout_root"
-    android:background="#eAAA"
+    android:background="#EEDDDDDD"
     android:gravity="center"
     android:padding="10dp">
 
     <ImageView
-        android:layout_width="100px"
-        android:layout_height="100px"
+        android:layout_width="200px"
+        android:layout_height="200px"
         android:padding="5px"
         android:id="@+id/imageView1"
         android:scaleType="fitXY"

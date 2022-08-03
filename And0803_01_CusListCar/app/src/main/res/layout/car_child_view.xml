@@ -3,7 +3,7 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/toast_layout_root"
-    android:background="#eAAA"
+    android:background="#F3ECB4"
     android:gravity="center"
     android:padding="10dp">
     <ImageView
