@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                      }else{
                          //String s = "이름"+name+"나이"+num;
                          sqlDB =myDBHelper.getWritableDatabase(); //수정 모드 오픈
-                         sqlDB.execSQL("insert into groupTBL(gname, GNumber) values(' "+name+" ', "+num+" );"); // ' '->name은 char이기 때문에
+                         sqlDB.execSQL("insert into groupTBL(gname, GNumber) values('"+name+"', "+num+" );"); // ' '->name은 char이기 때문에
                          sqlDB.close();
                          Toast.makeText(getApplicationContext(),"입력성공",Toast.LENGTH_SHORT).show();
                          edtGName.setText("");
@@ -91,71 +91,66 @@ public class MainActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                View v =View.inflate(getApplicationContext(),R.layout.delete,null);
+                View v = View.inflate(getApplicationContext(), R.layout.delete, null);
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                 dlg.setTitle("그룹 삭제");
                 dlg.setView(v);
-                final  EditText edtDelGName =v.findViewById(R.id.edtDelGName);
+                final EditText edtDeleteGName = v.findViewById(R.id.edtDelGName);
                 dlg.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        try {
-                            sqlDB =myDBHelper.getWritableDatabase();
-                            String name = edtDelGName.getText().toString().trim();
-                            if(!name.isEmpty()){
+                        try{
+                            sqlDB = myDBHelper.getWritableDatabase();
+                            String name = edtDeleteGName.getText().toString().trim();
+                            if (!name.isEmpty()) {
                                 sqlDB.execSQL("DELETE FROM groupTBL WHERE gName = '" + name + "';");
                                 sqlDB.close();
-                                Toast.makeText(getApplicationContext(),"삭제됨",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), name+" 삭제됨",
+                                        Toast.LENGTH_SHORT).show();
                                 btnSelect.callOnClick();
-                            }else{
-                                Toast.makeText(getApplicationContext(),"이름을 입력하세요",Toast.LENGTH_SHORT).show();
                             }
-
-                        }catch (Exception e){
+                            else Toast.makeText(getApplicationContext(),"이름을 입력하세요.",
+                                    Toast.LENGTH_SHORT).show();
+                        }catch(Exception e){
                             Toast.makeText(getApplicationContext(),"삭제실패",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-                dlg.setNegativeButton("취소",null);
+                dlg.setNegativeButton("취소", null);
                 dlg.show();
             }
         });
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                View v =View.inflate(getApplicationContext(),R.layout.update,null);
+                View v = View.inflate(getApplicationContext(), R.layout.update, null);
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
-                dlg.setTitle("그룹 정보 수정");
-                dlg.setView(v);
-                final  EditText edtUpdateGName =v.findViewById(R.id.edtUpdateGName);
-                final  EditText edtUpdateGNumber =v.findViewById(R.id.edtUpdateGNumber);
+                dlg.setTitle("그룹 정보 수정");    dlg.setView(v);
+                final EditText edtUpdateGName = v.findViewById(R.id.edtUpdateGName);
+                final EditText edtUpdateGNumber = v.findViewById(R.id.edtUpdateGNumber);
                 dlg.setPositiveButton("수정", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        try {
-                            sqlDB =myDBHelper.getWritableDatabase();
+                        try{
+                            sqlDB = myDBHelper.getWritableDatabase();
                             String name = edtUpdateGName.getText().toString().trim();
-                            int number =Integer.parseInt(edtUpdateGNumber.getText().toString().trim());
-                            if(!name.isEmpty()){
-                                String sql ="UPDATE groupTBL SET gNumber ="+ number+" WHERE gName ='"+name+"'";
-                                sqlDB.execSQL(sql);
-                                sqlDB.close();
+                            int number = Integer.parseInt(edtUpdateGNumber.getText().toString().trim());
+                            if (!name.isEmpty()) {
+                                String sql ="UPDATE groupTBL SET gNumber= "+ number +" WHERE gName = '"+name+"'";
+                                sqlDB.execSQL(sql);     sqlDB.close();
                                 Toast.makeText(getApplicationContext(),"수정됨",Toast.LENGTH_SHORT).show();
                                 btnSelect.callOnClick();
-                            }else{
-                                Toast.makeText(getApplicationContext(),"이름과 인원을 입력 하세요.",Toast.LENGTH_SHORT).show();
-                            }
-
-                        }catch (Exception e){
-                            Toast.makeText(getApplicationContext(),"수정실패",Toast.LENGTH_SHORT).show();
+                            }else Toast.makeText(getApplicationContext(),"이름과 인원을 입력해야 합니다.",
+                                    Toast.LENGTH_SHORT).show();
+                        }catch(Exception e) {
+                            Toast.makeText(getApplicationContext(), "수정실패", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-                dlg.setNegativeButton("취소",null);
-                dlg.show();
+                dlg.setNegativeButton("취소", null);   dlg.show();
+
             }
         });
-
 
     }
 }
