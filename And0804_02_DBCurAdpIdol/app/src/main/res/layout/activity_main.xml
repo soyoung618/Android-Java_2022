@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:padding="20dp">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +19,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/edtName"/>
+            android:id="@+id/edtGName"
+            android:hint="그룹명 입력"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,55 +29,41 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="연락처 : "
+            android:text="인원 : "
             android:textSize="20dp"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/edtTel"/>
+            android:id="@+id/edtGNumber"
+            android:inputType="numberDecimal"
+            android:hint="인원수 입력"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button android:id="@+id/btnAdd"
+        <Button android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="초기화"
+            android:id="@+id/btnClear"/>
+        <Button android:layout_margin="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="입력"
-            android:textSize="20dp"/>
-        <Button android:id="@+id/btnSelect"
+            android:id="@+id/btnInsert"/>
+        <Button android:layout_margin="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="조회"
-            android:textSize="20dp"/>>
-
+            android:id="@+id/btnSelect"/>
     </LinearLayout>
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/listView"/>
 
 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

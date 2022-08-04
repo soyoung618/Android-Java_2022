@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText edtName,edtTel;
-    Button btnAdd, btnSelect,btnResult;
+    Button btnAdd, btnSelect;
     ListView listView;
 
     MyDBHelper myDBHelper;
@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         edtTel=findViewById(R.id.edtTel);
         btnAdd=findViewById(R.id.btnAdd);
         btnSelect=findViewById(R.id.btnSelect);
-        btnResult=findViewById(R.id.btnResult);
         listView=findViewById(R.id.listView);
         myDBHelper= new MyDBHelper(this);
 
