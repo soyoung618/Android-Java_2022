@@ -52,6 +52,13 @@
             android:layout_weight="1"
             android:text="조회"
             android:textSize="20dp"/>
+        <Button android:id="@+id/btnResult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="초기화"
+            android:textSize="20dp"/>
+
 
 
     </LinearLayout>

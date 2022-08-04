@@ -6,14 +6,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText edtName,edtTel;
-    Button btnAdd, btnSelect;
+    Button btnAdd, btnSelect,btnResult;
     ListView listView;
 
     MyDBHelper myDBHelper;
@@ -29,8 +31,20 @@ public class MainActivity extends AppCompatActivity {
         edtTel=findViewById(R.id.edtTel);
         btnAdd=findViewById(R.id.btnAdd);
         btnSelect=findViewById(R.id.btnSelect);
+        btnResult=findViewById(R.id.btnResult);
         listView=findViewById(R.id.listView);
         myDBHelper= new MyDBHelper(this);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                TextView txtName =view.findViewById(R.id.txtName);
+                TextView txtTel =view.findViewById(R.id.txtTel);
+                String out ="이름 : "+txtName.getText().toString();
+                out += "\n 전번  : "+txtTel.getText().toString();
+                Toast.makeText(getApplicationContext(),out,Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
