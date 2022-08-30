@@ -30,16 +30,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("[일기장-SD메모리에 저장]");
+
         ActivityCompat.requestPermissions(this, new String[]
                 {android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
 
         dataPicker1 = findViewById(R.id.dataPicker1);
         edtDiary = findViewById(R.id.edtDiary);
         btnWrite = findViewById(R.id.btnWrite);
+
         Calendar cal = Calendar.getInstance();
+
         int year = cal.get(Calendar.YEAR);//시스템 달력에서 년도 가져오기
         int month = cal.get(Calendar.MONTH);//시스템 달력에서 월(0부터 시작) 가져오기
         int day = cal.get(Calendar.DAY_OF_MONTH);//시스템 달력에서 일 가져오기
+
         strSDPath = Environment.getExternalStorageDirectory().getAbsolutePath();
         strSDPath += "/myDiaryApp/";
         myDir = new File(strSDPath);
